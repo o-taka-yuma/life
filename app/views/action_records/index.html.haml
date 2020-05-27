@@ -6,9 +6,8 @@
       user
     %a.header__record-btn
       .header__record-btn__record
-        記録する
-      .header__record-btn__logout
-        = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout"
+        = link_to "記録する", "#"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header__record-btn__logout"
       
   .main
     .main__left
