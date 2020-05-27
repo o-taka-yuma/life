@@ -1,0 +1,37 @@
+.wrapper2
+  .header
+    %a.header__logo
+      = image_tag "logo.jpg", size: '100x60'
+    %a.header__user-date
+      user
+    %a.header__record-btn
+      .header__record-btn__record
+        記録する
+      .header__record-btn__logout
+        -# = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout"
+      
+  .main
+    .main__left
+      .main__left__life-target
+        人生目標、幸せ
+        .main__left__life-target-input
+      .main__left__doream-target
+        夢、自己実現
+        .main__left__doream-target-input
+      .main__left__Achievement-target
+        達成目標
+        .main__left__Achievement-target__input
+    .main__light
+      .main__light__records
+        円グラフ
+      %h1.main__light__title
+        行動平均値
+      .main__light__record-pie-chart
+        %ul.main__light__record-pie-chart__left
+          %li 睡眠
+          %li 仕事
+          %li 努力
+        %ul.main__light__record-pie-chart__right           
+          %li 息抜き
+          %li 挑戦
+          %li 雑務
