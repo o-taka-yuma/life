@@ -13,7 +13,11 @@
   border-bottom: solid 15px transparent;
   border-right: solid 20px rgb(149, 158, 155);
 }
-
+@mixin text{
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+}
 
 .wrapper2 {
   height: 100vh;
@@ -33,12 +37,19 @@
   .main {
     height: calc(100% - 60px);
     width: 100%;
-    background-color: #fffacd;
+    background-color: grey;
     display: flex;
     
     .main__left {
       width: 50%;
       height: 100%;
+      .main__left__edit {
+        color: red;
+        font-weight: bold;
+        font-size: 30px;
+        float: right
+        
+      }
       .main__left__life-target {
         width: 130px;
         @include ribon
@@ -46,23 +57,32 @@
       .main__left__life-target::before {
         @include ribon_before
       }
-    
+      .main__left__life-target-input {
+        @include text
+      }
       .main__left__doream-target {
-        margin-top: 100px;
+        margin-top: 25px;
         width: 100px;
         @include ribon
       }
       .main__left__doream-target::before {
         @include ribon_before
       }
+      .main__left__doream-target-input {
+        @include text
+      }
       .main__left__Achievement-target {
-        margin-top: 100px;
+        margin-top: 25px;
         width: 90px;
         @include ribon
       }
       .main__left__Achievement-target::before {
         @include ribon_before
       }
+      .main__left__Achievement-target__input {
+        @include text
+      }
+      
     }
     .main__light {
       width: 50%;
