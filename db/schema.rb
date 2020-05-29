@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_013221) do
+ActiveRecord::Schema.define(version: 2020_05_28_063722) do
 
   create_table "action_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.time "sleep", null: false
-    t.time "work", null: false
-    t.time "effort", null: false
-    t.time "takeBreak"
-    t.time "challenge"
-    t.time "chores"
+    t.date "recordDay", null: false
+    t.integer "sleep", null: false
+    t.integer "work", null: false
+    t.integer "effort", null: false
+    t.integer "takeBreak"
+    t.integer "challenge"
+    t.integer "chores"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

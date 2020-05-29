@@ -6,13 +6,13 @@
       user
     %a.header__record-btn
       .header__record-btn__record
-        = link_to "記録する", "#"
+        = link_to "記録する", new_action_record_path
         = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header__record-btn__logout"
       
   .main
     .main__left
       .main__left__edit
-        = link_to "編集", edit_target_path, "main__left__edit__btn"
+        = link_to "編集", "main__left__edit__btn"
       .main__left__life-target
         人生目標、幸せ
       .main__left__life-target-input
@@ -34,10 +34,10 @@
         行動平均値
       .main__light__record-pie-chart
         %ul.main__light__record-pie-chart__left
-          %li 睡眠
-          %li 仕事
-          %li 努力
+          %li 睡眠 35 ％
+          %li 仕事 30 ％
+          %li 努力  5 ％
         %ul.main__light__record-pie-chart__right           
-          %li 息抜き
-          %li 挑戦
-          %li 雑務
+          %li 息抜き 30 ％
+          %li 挑戦  3 ％
+          %li 雑務  7 ％

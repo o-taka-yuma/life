@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MainTest < ActiveSupport::TestCase
+class ActionRecordTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
