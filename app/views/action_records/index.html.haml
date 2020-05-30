@@ -34,8 +34,26 @@
         行動平均値
       .main__light__record-pie-chart
         %ul.main__light__record-pie-chart__left
-          %li 睡眠 35 ％
-          %li 仕事 30 ％
+          %li.sleep
+            .sleep__title
+              睡眠
+            .sleep__time
+              - numbers = [1, 2, 3, 4, 5] # 要素
+              - numbers.length # 要素の合計（ここでは5）
+              -  sum_of_number = 0 # 合計値用の変数の定義
+              -  numbers.each do |number|
+              -  sum_of_number = sum_of_number + number # 順番に足す
+              -  end
+              -  puts sum_of_number / numbers.length
+            .sleep__propotion
+              ％
+          %li.work
+            .work__title
+              仕事
+            .work__time
+            .work__propotion
+              ％
+
           %li 努力  5 ％
         %ul.main__light__record-pie-chart__right           
           %li 息抜き 30 ％
