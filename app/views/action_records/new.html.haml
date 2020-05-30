@@ -4,16 +4,16 @@
       %p.date__content
         = f.date_select :recordDay, use_month_numbers:true, class: :recordDay
       %p.sleep__time
-        = f.number_field :sleep, placeholder: :睡眠, class: :sleep, min: 30, max: 1440
+        = f.number_field :sleep, placeholder: :睡眠, class: :sleep, min: 1, max: 24
       %p.work__time
-        = f.number_field :work, placeholder: "仕事時間", class: :work, min: 30, max: 1440
+        = f.number_field :work, placeholder: "仕事時間", class: :work, min: 1, max: 24
       %p.effort__time
-        = f.number_field :effort, placeholder: "努力時間", class: :effort, min: 30, max: 1440
+        = f.number_field :effort, placeholder: "努力時間", class: :effort, min: 1, max: 24
       %p.takeBreak__time
-        = f.number_field :takeBreak, class: :takeBreak, placeholder: "休憩時間", min: 30, max: 1440
+        = f.number_field :takeBreak, class: :takeBreak, placeholder: "休憩時間", min: 1, max: 24
       %p.challenge__time
-        = f.number_field :challenge, class: :challenge, placeholder: "挑戦", min: 30, max: 1440
+        = f.number_field :challenge, class: :challenge, placeholder: "挑戦", min: 1, max: 24
       %p.chores
-        = f.number_field :chores, class: :chores, placeholder: "雑務", min: 30, max: 1440
+        = f.number_field :chores, class: :chores, placeholder: "雑務", min: 1, max: 24
       %a.submit
         = f.submit '記録する', class: :form＿＿btn
