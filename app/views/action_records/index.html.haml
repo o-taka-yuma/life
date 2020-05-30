@@ -38,24 +38,54 @@
             .sleep__title
               睡眠
             .sleep__time
-              - numbers = [1, 2, 3, 4, 5] # 要素
-              - numbers.length # 要素の合計（ここでは5）
-              -  sum_of_number = 0 # 合計値用の変数の定義
-              -  numbers.each do |number|
-              -  sum_of_number = sum_of_number + number # 順番に足す
-              -  end
-              -  puts sum_of_number / numbers.length
+              - record_total  = @record.sum(:sleep) / @record.ids.length
+              - num = record_total.floor(2) * 100
+              = num / 24
             .sleep__propotion
               ％
           %li.work
             .work__title
               仕事
             .work__time
+              - record_total  = @record.sum(:work) / @record.ids.length
+              - num = record_total.floor(2) * 100
+              = num / 24
             .work__propotion
               ％
-
-          %li 努力  5 ％
+          %li.effort
+            .effort__title
+              努力
+            .effort__time
+              - record_total  = @record.sum(:effort) / @record.ids.length
+              - num = record_total.floor(2) * 100
+              = num / 24
+            .effort__propotion
+              ％
         %ul.main__light__record-pie-chart__right           
-          %li 息抜き 30 ％
-          %li 挑戦  3 ％
-          %li 雑務  7 ％
+          %li.takeBreak
+            .takeBreak__title
+              息抜き
+            .takeBreak__time
+              - record_total  = @record.sum(:takeBreak) / @record.ids.length
+              - num = record_total.floor(2) * 100
+              = num / 24
+            .takeBreak__propotion
+              ％
+          %li.challenge
+            .challenge__title
+              努力
+            .challenge__time
+              - record_total  = @record.sum(:takeBreak) / @record.ids.length
+              - num = record_total.floor(2) * 100
+              = num / 24
+            .challenge__propotion
+              ％
+          %li.chores
+            .chores__title
+              雑務
+            .chores__time
+              - record_total  = @record.sum(:chores) / @record.ids.length
+              - num = record_total.floor(2) * 100
+              = num / 24
+            .chores__propotion
+              ％

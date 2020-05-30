@@ -112,12 +112,24 @@
           .work {
             display: flex;
           }
+          .effort {
+            display: flex;
+          }
         }
         .main__light__record-pie-chart__right {
           flex-direction: column;
           margin-left: 200px;
           li {
             margin-bottom: 40px;
+          }
+          .takeBreak {
+            display: flex;
+          }
+          .challenge {
+            display: flex;
+          }
+          .chores {
+            display: flex;
           }
 
         }
