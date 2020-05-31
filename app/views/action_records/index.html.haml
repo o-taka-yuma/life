@@ -6,7 +6,7 @@
       user
     %a.header__record-btn
       .header__record-btn__record
-        = link_to "記録する", new_user_action_record_path(user_id: current_user.id)
+        = link_to "記録する", new_action_record_path
         = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header__record-btn__logout"
       
   .main
