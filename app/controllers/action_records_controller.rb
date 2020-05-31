@@ -10,7 +10,7 @@ class ActionRecordsController < ApplicationController
 
   def create
     ActionRecord.create(record_params)
-    redirect_to action_records_path
+    redirect_to user_action_records_path(user_id: current_user.id)
   end
 
 

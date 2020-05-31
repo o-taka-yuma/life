@@ -1,6 +1,6 @@
 .record
   .note
-    = form_with model: @record, class: :form, local:true do |f|
+    = form_with model: [@user, @record], class: :form, local:true do |f|
       %p.date__content
         = f.date_select :recordDay, use_month_numbers:true, class: :recordDay
       %p.sleep__time
