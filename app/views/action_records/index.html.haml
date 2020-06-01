@@ -3,7 +3,7 @@
     %a.header__logo
       = image_tag "logo.jpg", size: '100x60'
     %a.header__user-date
-      user
+      = current_user.name
     %a.header__record-btn
       .header__record-btn__record
         = link_to "記録する", new_action_record_path
@@ -12,20 +12,19 @@
   .main
     .main__left
       .main__left__edit
-        = link_to "編集", "main__left__edit__btn"
+        = link_to "編集", new_target_path
       .main__left__life-target
         人生目標、幸せ
       .main__left__life-target-input
-        多くのことへの挑戦と好奇心を満たす波乱万丈な人生
+        
       .main__left__doream-target
         夢、自己実現
       .main__left__doream-target-input
-        作家
+        
       .main__left__Achievement-target
         達成目標
       .main__left__Achievement-target__input
-        手に職をもつ、プログラマーになるためにこのアプリを開発
-        一日一時間の執筆活動
+        
       
     .main__light
       .main__light__records
@@ -38,7 +37,7 @@
             .sleep__title
               睡眠
             .sleep__time
-              - record_total  = @record.sum(:sleep) / @record.ids.length
+              - record_total = @record.sum(:sleep) / @record.ids.length rescue 0
               - num = record_total.floor(2) * 100
               = num / 24
             .sleep__propotion
@@ -47,7 +46,7 @@
             .work__title
               仕事
             .work__time
-              - record_total  = @record.sum(:work) / @record.ids.length
+              - record_total  = @record.sum(:work) / @record.ids.length rescue 0
               - num = record_total.floor(2) * 100
               = num / 24
             .work__propotion
@@ -56,7 +55,7 @@
             .effort__title
               努力
             .effort__time
-              - record_total  = @record.sum(:effort) / @record.ids.length
+              - record_total  = @record.sum(:effort) / @record.ids.length rescue 0
               - num = record_total.floor(2) * 100
               = num / 24
             .effort__propotion
@@ -66,7 +65,7 @@
             .takeBreak__title
               息抜き
             .takeBreak__time
-              - record_total  = @record.sum(:takeBreak) / @record.ids.length
+              - record_total  = @record.sum(:takeBreak) / @record.ids.length rescue 0
               - num = record_total.floor(2) * 100
               = num / 24
             .takeBreak__propotion
@@ -75,7 +74,7 @@
             .challenge__title
               努力
             .challenge__time
-              - record_total  = @record.sum(:takeBreak) / @record.ids.length
+              - record_total  = @record.sum(:takeBreak) / @record.ids.length rescue 0
               - num = record_total.floor(2) * 100
               = num / 24
             .challenge__propotion
@@ -84,8 +83,7 @@
             .chores__title
               雑務
             .chores__time
-              - record_total  = @record.sum(:chores) / @record.ids.length
+              - record_total  = @record.sum(:chores) / @record.ids.length rescue 0
               - num = record_total.floor(2) * 100
               = num / 24
             .chores__propotion
-              ％

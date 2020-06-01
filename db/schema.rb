@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_05_28_063722) do
     t.date "recordDay", null: false
     t.integer "sleep", null: false
     t.integer "work", null: false
-    t.integer "effort", null: false
-    t.integer "takeBreak"
+    t.integer "takeBreak", null: false
+    t.integer "effort"
     t.integer "challenge"
     t.integer "chores"
     t.bigint "user_id"

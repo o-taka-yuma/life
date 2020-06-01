@@ -5,8 +5,8 @@ class CreateActionRecords < ActiveRecord::Migration[5.2]
       t.date    :recordDay,            null: false
       t.integer :sleep,                null: false
       t.integer :work,                 null: false
-      t.integer :effort,               null: false
-      t.integer :takeBreak
+      t.integer :takeBreak,            null: false
+      t.integer :effort
       t.integer :challenge
       t.integer :chores
 
