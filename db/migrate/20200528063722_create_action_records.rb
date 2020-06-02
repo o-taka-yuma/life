@@ -6,9 +6,9 @@ class CreateActionRecords < ActiveRecord::Migration[5.2]
       t.integer :sleep,                null: false
       t.integer :work,                 null: false
       t.integer :takeBreak,            null: false
-      t.integer :effort
-      t.integer :challenge
-      t.integer :chores
+      t.integer :effort,               null: false
+      t.integer :challenge,            null: false
+      t.integer :chores,               null: false
 
       t.references :user,   foreign_key: true
 

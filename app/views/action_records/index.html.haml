@@ -14,7 +14,7 @@
       .main__left__edit
         = link_to "編集", new_target_path
       .main__left__life-target
-        人生目標、幸せ
+        人生目標、生き方
       .main__left__life-target-input
         
       .main__left__doream-target
@@ -24,11 +24,43 @@
       .main__left__Achievement-target
         達成目標
       .main__left__Achievement-target__input
-        
       
+      .main__left__day-record
+        %a.main__left__day-record__content
     .main__light
       .main__light__records
-        円グラフ
+        - record_averages = {}
+        - record_total = @record.average(:sleep) rescue 0
+        - record_average = (record_total * 100) / 24
+        - record_average.floor()
+        - record_averages.store("睡眠", record_average.floor())
+
+        - record_total = @record.average(:work) rescue 0      
+        - record_average = (record_total * 100) /24
+        - record_average.floor()
+        - record_averages.store("仕事", record_average.floor())
+
+        - record_total = @record.average(:effort) rescue 0      
+        - record_average = (record_total * 100) /24
+        - record_average.floor()
+        - record_averages.store("努力", record_average.floor())
+
+        - record_total = @record.average(:takeBreak) rescue 0
+        - record_average = (record_total * 100) / 24
+        - record_average.floor()
+        - record_averages.store("息抜き", record_average.floor())
+
+        - record_total = @record.average(:challenge) rescue 0
+        - record_average = (record_total * 100) / 24
+        - record_average.floor()
+        - record_averages.store("挑戦", record_average.floor())
+
+        - record_total = @record.average(:chores) rescue 0
+        - record_average = (record_total * 100) / 24
+        - record_average.floor()
+        - record_averages.store("雑務", record_average.floor())
+
+        = pie_chart record_averages
       %h1.main__light__title
         行動平均値
       .main__light__record-pie-chart
@@ -37,27 +69,28 @@
             .sleep__title
               睡眠
             .sleep__time
-              - record_total = @record.sum(:sleep) / @record.ids.length rescue 0
-              - num = record_total.floor(2) * 100
-              = num / 24
+              - record_total = @record.average(:sleep) rescue 0
+              - record_average = (record_total * 100) / 24
+              = record_average.floor()
+              
             .sleep__propotion
               ％
           %li.work
             .work__title
               仕事
             .work__time
-              - record_total  = @record.sum(:work) / @record.ids.length rescue 0
-              - num = record_total.floor(2) * 100
-              = num / 24
+              - record_total = @record.average(:work) rescue 0
+              - record_average = (record_total * 100) /24
+              = record_average.floor()
             .work__propotion
               ％
           %li.effort
             .effort__title
               努力
             .effort__time
-              - record_total  = @record.sum(:effort) / @record.ids.length rescue 0
-              - num = record_total.floor(2) * 100
-              = num / 24
+              - record_total = @record.average(:effort) rescue 0
+              - record_average = (record_total * 100) / 24
+              = record_average.floor()
             .effort__propotion
               ％
         %ul.main__light__record-pie-chart__right           
@@ -65,25 +98,26 @@
             .takeBreak__title
               息抜き
             .takeBreak__time
-              - record_total  = @record.sum(:takeBreak) / @record.ids.length rescue 0
-              - num = record_total.floor(2) * 100
-              = num / 24
+              - record_total = @record.average(:takeBreak) rescue 0
+              - record_average = (record_total * 100) / 24
+              = record_average.floor()
             .takeBreak__propotion
               ％
           %li.challenge
             .challenge__title
               努力
             .challenge__time
-              - record_total  = @record.sum(:takeBreak) / @record.ids.length rescue 0
-              - num = record_total.floor(2) * 100
-              = num / 24
+              - record_total = @record.average(:challenge) rescue 0
+              - record_average = (record_total * 100) / 24
+              = record_average.floor()
             .challenge__propotion
               ％
           %li.chores
             .chores__title
               雑務
             .chores__time
-              - record_total  = @record.sum(:chores) / @record.ids.length rescue 0
-              - num = record_total.floor(2) * 100
-              = num / 24
+              - record_total = @record.average(:chores) rescue 0
+              - record_average = (record_total * 100) / 24
+              = record_average.floor()
             .chores__propotion
+              ％
