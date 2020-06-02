@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2020_05_28_063722) do
     t.date "recordDay", null: false
     t.integer "sleep", null: false
     t.integer "work", null: false
+    t.integer "takeBreak", null: false
     t.integer "effort", null: false
-    t.integer "takeBreak"
-    t.integer "challenge"
-    t.integer "chores"
+    t.integer "challenge", null: false
+    t.integer "chores", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

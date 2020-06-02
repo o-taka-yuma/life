@@ -1,7 +1,8 @@
 class ActionRecordsController < ApplicationController
     
   def index
-    @record = ActionRecord.all
+    @record = ActionRecord.where(user_id: current_user.id)
+    
   end
 
   def new
@@ -10,7 +11,6 @@ class ActionRecordsController < ApplicationController
 
   def create
     ActionRecord.create(record_params)
-    redirect_to action_records_path
   end
 
 

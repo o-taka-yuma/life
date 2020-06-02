@@ -1,19 +1,35 @@
 .record
+  
   .note
-    = form_with model: @record, class: :form, local:true do |f|
-      %p.date__content
-        = f.date_select :recordDay, use_month_numbers:true, class: :recordDay
-      %p.sleep__time
-        = f.number_field :sleep, placeholder: :睡眠, class: :sleep, min: 1, max: 24
-      %p.work__time
-        = f.number_field :work, placeholder: "仕事時間", class: :work, min: 1, max: 24
-      %p.effort__time
-        = f.number_field :effort, placeholder: "努力時間", class: :effort, min: 1, max: 24
-      %p.takeBreak__time
-        = f.number_field :takeBreak, class: :takeBreak, placeholder: "休憩時間", min: 1, max: 24
-      %p.challenge__time
-        = f.number_field :challenge, class: :challenge, placeholder: "挑戦", min: 1, max: 24
+    .title
+      %p.sleep
+        睡眠
+      %p.work
+        仕事
+      %p.takeBreak
+        休憩
+      %p.effort
+        努力
+      %p.challenge
+        挑戦
       %p.chores
-        = f.number_field :chores, class: :chores, placeholder: "雑務", min: 1, max: 24
-      %a.submit
-        = f.submit '記録する', class: :form＿＿btn
+        雑務
+    .record
+      = form_with model: @record, class: :form, local:true do |f|
+        %p.date__content
+          = f.date_select :recordDay, use_month_numbers:true, class: :recordDay
+        %p.sleep__time
+          = f.number_field :sleep, class: :sleep, min: 0, max: 24
+        %p.work__time
+          = f.number_field :work, class: :work, min: 0, max: 24
+        %p.takeBreak__time
+          = f.number_field :takeBreak, class: :takeBreak, min: 0, max: 24
+        %p.effort__time
+          = f.number_field :effort,  class: :effort, min: 0, max: 24
+        %p.challenge__time
+          = f.number_field :challenge, class: :challenge,  min: 0, max: 24
+        %p.chores
+          = f.number_field :chores, class: :chores,  min: 0, max: 24
+        %a.submit
+          = f.submit '記録する', class: :form＿＿btn
+  .graff

@@ -1,0 +1,54 @@
+.wrapper3 {
+  height: 100%;
+  width: 100%;
+  .main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    
+    .main__left {
+      width: 45%;
+      height: 100%;
+      .main__left__edit {
+        color: red;
+        font-weight: bold;
+        font-size: 30px;
+        float: right
+        
+      }
+      .main__left__life-target {
+        width: 130px;
+        @include ribon
+      }
+      .main__left__life-target::before {
+        @include ribon_before
+      }
+      .main__left__life-target-input {
+        @include text
+      }
+      .main__left__doream-target {
+        margin-top: 25px;
+        width: 100px;
+        @include ribon
+      }
+      .main__left__doream-target::before {
+        @include ribon_before
+      }
+      .main__left__doream-target-input {
+        @include text
+      }
+      .main__left__Achievement-target {
+        margin-top: 25px;
+        width: 90px;
+        @include ribon
+      }
+      .main__left__Achievement-target::before {
+        @include ribon_before
+      }
+      .main__left__Achievement-target__input {
+        @include text
+      }
+      
+    }
+  }
+}
