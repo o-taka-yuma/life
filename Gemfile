@@ -62,3 +62,4 @@ gem 'haml-rails'
 gem 'devise'
 gem 'pry-rails'
 gem "chartkick"
+gem 'rails_12factor', group: :production
