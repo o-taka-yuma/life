@@ -2,7 +2,12 @@ class ActionRecordsController < ApplicationController
     
   def index
     @record = ActionRecord.where(user_id: current_user.id)
-    
+    @sleepAverage = @record.average(:sleep)
+    @workAverage = @record.average(:work)
+    @effortAverage = @record.average(:effort)
+    @takeBreakAverage = @record.average(:takeBreak)
+    @challengeAverage = @record.average(:challenge)
+    @choresAverage = @record.average(:chores)
   end
 
   def new

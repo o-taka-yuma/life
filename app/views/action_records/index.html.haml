@@ -29,38 +29,14 @@
         %a.main__left__day-record__content
     .main__light
       .main__light__records
-        - record_averages = {}
-        - record_total = @record.average(:sleep) rescue 0
-        - record_average = (record_total * 100) / 24
-        - record_average.floor()
-        - record_averages.store("睡眠", record_average.floor())
-
-        - record_total = @record.average(:work) rescue 0      
-        - record_average = (record_total * 100) /24
-        - record_average.floor()
-        - record_averages.store("仕事", record_average.floor())
-
-        - record_total = @record.average(:effort) rescue 0      
-        - record_average = (record_total * 100) /24
-        - record_average.floor()
-        - record_averages.store("努力", record_average.floor())
-
-        - record_total = @record.average(:takeBreak) rescue 0
-        - record_average = (record_total * 100) / 24
-        - record_average.floor()
-        - record_averages.store("息抜き", record_average.floor())
-
-        - record_total = @record.average(:challenge) rescue 0
-        - record_average = (record_total * 100) / 24
-        - record_average.floor()
-        - record_averages.store("挑戦", record_average.floor())
-
-        - record_total = @record.average(:chores) rescue 0
-        - record_average = (record_total * 100) / 24
-        - record_average.floor()
-        - record_averages.store("雑務", record_average.floor())
-
-        = pie_chart record_averages
+        - recordAverage = {}
+        - recordAverage.store("睡眠", daypercent(@sleepAverage)) rescue 0
+        - recordAverage.store("仕事", daypercent(@workAverage)) rescue 0
+        - recordAverage.store("努力", daypercent(@effortAverage)) rescue 0
+        - recordAverage.store("息抜き", daypercent(@takeBreakAverage)) rescue 0
+        - recordAverage.store("挑戦", daypercent(@challengeAverage)) rescue 0
+        - recordAverage.store("雑務", daypercent(@choresAverage)) rescue 0
+        = pie_chart recordAverage
       %h1.main__light__title
         行動平均値
       .main__light__record-pie-chart
@@ -69,28 +45,21 @@
             .sleep__title
               睡眠
             .sleep__time
-              - record_total = @record.average(:sleep) rescue 0
-              - record_average = (record_total * 100) / 24
-              = record_average.floor()
-              
+              = daypercent(@sleepAverage).floor() rescue 0
             .sleep__propotion
               ％
           %li.work
             .work__title
               仕事
             .work__time
-              - record_total = @record.average(:work) rescue 0
-              - record_average = (record_total * 100) /24
-              = record_average.floor()
+              = daypercent(@workAverage).floor() rescue 0
             .work__propotion
               ％
           %li.effort
             .effort__title
               努力
             .effort__time
-              - record_total = @record.average(:effort) rescue 0
-              - record_average = (record_total * 100) / 24
-              = record_average.floor()
+              = daypercent(@effortAverage).floor() rescue 0
             .effort__propotion
               ％
         %ul.main__light__record-pie-chart__right           
@@ -98,26 +67,20 @@
             .takeBreak__title
               息抜き
             .takeBreak__time
-              - record_total = @record.average(:takeBreak) rescue 0
-              - record_average = (record_total * 100) / 24
-              = record_average.floor()
+              = daypercent(@takeBreakAverage).floor() rescue 0
             .takeBreak__propotion
               ％
           %li.challenge
             .challenge__title
-              努力
+              挑戦
             .challenge__time
-              - record_total = @record.average(:challenge) rescue 0
-              - record_average = (record_total * 100) / 24
-              = record_average.floor()
+              = daypercent(@challengeAverage).floor() rescue 0
             .challenge__propotion
               ％
           %li.chores
             .chores__title
               雑務
             .chores__time
-              - record_total = @record.average(:chores) rescue 0
-              - record_average = (record_total * 100) / 24
-              = record_average.floor()
+              = daypercent(@choresAverage).floor() rescue 0
             .chores__propotion
               ％
