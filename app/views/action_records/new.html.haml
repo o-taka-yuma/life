@@ -1,7 +1,6 @@
 .record
-  
-  .note
-    .title
+  .record__note
+    .record__note__title
       %p.sleep
         睡眠
       %p.work
@@ -14,22 +13,25 @@
         挑戦
       %p.chores
         雑務
-    .record
+    .record__note__input
       = form_with model: @record, class: :form, local:true do |f|
+        %p.record__note__input__errrorMessage
+          - @record.errors.full_messages.each do |message|
+            = message
         %p.date__content
           = f.date_select :recordDay, use_month_numbers:true, class: :recordDay
         %p.sleep__time
-          = f.number_field :sleep, class: :sleep, min: 0, max: 24
+          = f.number_field :sleep, class: :sleep, min: 0, max: 24, value: 0
         %p.work__time
-          = f.number_field :work, class: :work, min: 0, max: 24
+          = f.number_field :work, class: :work, min: 0, max: 24, value: 0
         %p.takeBreak__time
-          = f.number_field :takeBreak, class: :takeBreak, min: 0, max: 24
+          = f.number_field :takeBreak, class: :takeBreak, min: 0, max: 24, value: 0
         %p.effort__time
-          = f.number_field :effort,  class: :effort, min: 0, max: 24
+          = f.number_field :effort,  class: :effort, min: 0, max: 24, value: 0
         %p.challenge__time
-          = f.number_field :challenge, class: :challenge,  min: 0, max: 24
+          = f.number_field :challenge, class: :challenge,  min: 0, max: 24, value: 0
         %p.chores
-          = f.number_field :chores, class: :chores,  min: 0, max: 24
+          = f.number_field :chores, class: :chores,  min: 0, max: 24, value: 0
         %a.submit
           = f.submit '記録する', class: :form＿＿btn
-  .graff
+    .graff

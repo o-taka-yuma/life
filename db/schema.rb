@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_063722) do
     t.integer "effort", null: false
     t.integer "challenge", null: false
     t.integer "chores", null: false
+    t.integer "total", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
