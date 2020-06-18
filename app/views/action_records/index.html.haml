@@ -1,32 +1,29 @@
 .wrapper2
-  .header
-    %a.header__logo
-      = image_tag "logo.jpg", size: '100x60'
-    %a.header__user-date
-      = current_user.name
-    %a.header__record-btn
-      .header__record-btn__record
-        = link_to "記録する", new_action_record_path
-        = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header__record-btn__logout"
-      
+  = render 'modules/header'
   .main
     .main__left
       .main__left__edit
         = link_to "編集", new_target_path
-      .main__left__life-target
-        人生目標、生き方
-      .main__left__life-target-input
-        
-      .main__left__doream-target
-        夢、自己実現
-      .main__left__doream-target-input
-        
-      .main__left__Achievement-target
-        達成目標
-      .main__left__Achievement-target__input
+      .main__left__text
+        .main__left__life-target
+          人生目標、生き方
+        .main__left__life-target-input
+          
+        .main__left__doream-target
+          夢、自己実現
+        .main__left__doream-target-input
+          
+        .main__left__Achievement-target
+          達成目標
+        .main__left__Achievement-target__input
       
       .main__left__day-record
-        %a.main__left__day-record__content
+        .main__left__day-record__content
+          - @record.each do |record| 
+            .main__left__day-record__content__box
+              = link_to record.recordDay, "/action_records/#{record.id}"
+              一日一言：
+              = record.comment
     .main__light
       .main__light__records
         - recordAverage = {}
@@ -43,44 +40,20 @@
         %ul.main__light__record-pie-chart__left
           %li.sleep
             .sleep__title
-              睡眠
-            .sleep__time
-              = daypercent(@sleepAverage).floor() rescue 0
-            .sleep__propotion
-              ％
+              睡眠#{daypercent(@sleepAverage).floor() rescue 0}%
           %li.work
             .work__title
-              仕事
-            .work__time
-              = daypercent(@workAverage).floor() rescue 0
-            .work__propotion
-              ％
+              仕事#{daypercent(@workAverage).floor() rescue 0}%
           %li.effort
             .effort__title
-              努力
-            .effort__time
-              = daypercent(@effortAverage).floor() rescue 0
-            .effort__propotion
-              ％
+              努力#{daypercent(@effortAverage).floor() rescue 0}%
         %ul.main__light__record-pie-chart__right           
           %li.takeBreak
             %label.takeBreak__title
-              息抜き
-            .takeBreak__time
-              = daypercent(@takeBreakAverage).floor() rescue 0
-            .takeBreak__propotion
-              ％
+              息抜き#{daypercent(@takeBreakAverage).floor() rescue 0}%
           %li.challenge
             .challenge__title
-              挑戦
-            .challenge__time
-              = daypercent(@challengeAverage).floor() rescue 0
-            .challenge__propotion
-              ％
+              挑戦#{daypercent(@challengeAverage).floor() rescue 0}%
           %li.chores
             .chores__title
-              雑務
-            .chores__time
-              = daypercent(@choresAverage).floor() rescue 0
-            .chores__propotion
-              ％
+              雑務#{daypercent(@choresAverage).floor() rescue 0}%

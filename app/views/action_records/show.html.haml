@@ -1,0 +1,43 @@
+= render 'modules/header'
+
+.day
+  .day__note
+    .day__note__piechart
+      - recordAverage = {}
+      - recordAverage.store("睡眠", @record.sleep)
+      - recordAverage.store("仕事", @record.work) rescue 0
+      - recordAverage.store("努力", @record.effort) rescue 0
+      - recordAverage.store("息抜き", @record.takeBreak) rescue 0
+      - recordAverage.store("挑戦", @record.challenge) rescue 0
+      - recordAverage.store("雑務", @record.chores) rescue 0
+      = pie_chart recordAverage
+    .day__note__content
+      .day__note__content__time
+        = @record.recordDay
+      .day__note__content__time
+        %label.day__note__content__sleep
+          睡眠#{@record.sleep}時間
+      .day__note__content__time
+        %label.day__note__content__work
+          仕事#{@record.work}時間
+      .day__note__content__time
+        %label.day__note__content__takeBreak
+          休憩#{@record.takeBreak}時間
+      - if @record.effort != 0 
+        .day__note__content__time
+          %label.day__note__content__effort
+            努力#{@record.effort}時間
+      - if @record.challenge != 0
+        .day__note__content__time
+          %label.day__note__content__challenge
+            挑戦#{@record.challenge}時間
+      - if @record.chores != 0
+        .day__note__content__time
+          %label.day__note__content__chores
+            雑務#{@record.chores}時間
+    
+    .day__note__text
+      %label.day__note__text__label
+        今日の一言
+      %br
+      = @record.comment
