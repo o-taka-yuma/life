@@ -37,7 +37,7 @@
   .main {
     height: calc(100% - 60px);
     width: 100%;
-    background-color: grey;
+    background-image: url(back.jpg);
     display: flex;
     
     .main__left {
@@ -87,10 +87,9 @@
     .main__light {
       width: 50%;
       height: 100%;
-      
       .main__light__records {
-        height: 50%;
-        width: 100%;
+        height: calc(50% - 40px);
+        width: calc(100% - 40px);
       }
       .main__light__title {
         height: 10%;
