@@ -9,6 +9,7 @@ class CreateActionRecords < ActiveRecord::Migration[5.2]
       t.integer :effort,               null: false
       t.integer :challenge,            null: false
       t.integer :chores,               null: false
+      t.integer :total,                null: false
 
       t.references :user,   foreign_key: true
 

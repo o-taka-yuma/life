@@ -15,14 +15,19 @@ class ActionRecordsController < ApplicationController
   end
 
   def create
-    ActionRecord.create(record_params)
+    @record = ActionRecord.new(record_params)
+    if @record.save
+      redirect_to action_records_path
+    else
+      render :new
+    end
   end
 
 
 
   private
   def record_params
-    params.require(:action_record).permit(:recordDay, :sleep, :work, :effort, :takeBreak, :challenge, :chores).merge(user_id: current_user.id)
+    params.require(:action_record).permit(:recordDay, :sleep, :work, :effort, :takeBreak, :challenge, :chores, :total).merge(user_id: current_user.id)
   end
 
 end
