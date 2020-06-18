@@ -22,18 +22,6 @@
 .wrapper2 {
   height: 100vh;
   width: 100%;
-  .header {
-    height: 60px;
-    background-color: #A4C6FF;
-    display: flex;
-    justify-content: space-between;
-    font-size: 30px;
-    .header__record-btn {
-      margin: 10px 0 10px 0px;
-      .header__record-btn__record {}
-      .header__record-btn__logout {}
-    }
-  }
   .main {
     height: calc(100% - 60px);
     width: 100%;
@@ -43,6 +31,9 @@
     .main__left {
       width: 50%;
       height: 100%;
+      .main__left__text {
+        height: 45%;
+      }
       .main__left__edit {
         color: red;
         font-weight: bold;
@@ -82,11 +73,32 @@
       .main__left__Achievement-target__input {
         @include text
       }
-      
+      .main__left__day-record {
+        height: 50%;
+        width: 100%;
+        background-image: url(memo.png);
+        background-size: cover;
+        margin: 0 auto;
+        position: relative;
+        .main__left__day-record__content {
+          position: absolute;
+          left: 20px;
+          top: 60px;
+          overflow: scroll;
+        }
+      }
     }
     .main__light {
-      width: 50%;
-      height: 100%;
+      width: calc(50% - 40px);
+      height: calc(100% - 40px);
+      padding:0 1em;
+      background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
+      background-size: auto 2.5em;
+      line-height: 2.5em;
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      margin-top: 5px;
       .main__light__records {
         height: calc(50% - 40px);
         width: calc(100% - 40px);

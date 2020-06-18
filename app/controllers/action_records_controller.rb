@@ -10,6 +10,10 @@ class ActionRecordsController < ApplicationController
     @choresAverage = @record.average(:chores)
   end
 
+  def show
+    @record = ActionRecord.find(params[:id])
+  end
+
   def new
     @record = ActionRecord.new
   end
@@ -27,7 +31,7 @@ class ActionRecordsController < ApplicationController
 
   private
   def record_params
-    params.require(:action_record).permit(:recordDay, :sleep, :work, :effort, :takeBreak, :challenge, :chores, :total).merge(user_id: current_user.id)
+    params.require(:action_record).permit(:recordDay, :sleep, :work, :effort, :takeBreak, :challenge, :chores, :total, :comment).merge(user_id: current_user.id)
   end
 
 end

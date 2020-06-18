@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root "start#index"
   resources :users
 
-  resources :action_records, only: [:index, :new, :create] 
+  resources :action_records, only: [:index, :show, :new, :create] 
   resources :targets, only:[:new, :create]
 end

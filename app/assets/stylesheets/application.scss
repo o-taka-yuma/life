@@ -1,5 +1,7 @@
 @import "reset";
 @import "start";
-@import "modules/action_records";
+@import "modules/header";
+@import "action_record/index";
 @import "action_record/new";
+@import "action_record/show";
 @import "targets/new";
