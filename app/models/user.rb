@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   has_many :action_records
-  
+  has_one :target
 end
