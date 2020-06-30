@@ -17,15 +17,31 @@
     position: relative;
     left: 300px;
     top: 100px;
-    &__title {
-      margin-top: 40px;
-      font-weight: bold;
-
+    &__input {
+      &__record {
+        text-align: right;
+        .year {
+          height: 30px;
+        }
+        .month {
+          height: 30px;
+        }
+        .day {
+          height: 30px;
+        }
+      }
+      &__box {
+        height: 30px;
+        width: 45px;
+        text-align: center;
+      }
+      &__comment {
+        .comment {
+          height: 30px;
+          width: 300px;
+        }
+      }
     }
-    .form {
-      width: 100%;
-    }
-    
   }
 }
 

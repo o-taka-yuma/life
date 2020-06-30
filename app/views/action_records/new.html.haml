@@ -1,41 +1,33 @@
 .record
   .record__note
-    .record__note__title
-      %p.sleep
-        睡眠
-      %p.work
-        仕事
-      %p.takeBreak
-        休憩
-      %p.effort
-        努力
-      %p.challenge
-        挑戦
-      %p.chores
-        雑務
-      %p.comment
-        今日の一言
     .record__note__input
       = form_with model: @record, class: :form, local:true do |f|
         %p.record__note__input__errrorMessage
           - @record.errors.full_messages.each do |message|
             = message
-        %p.date__content
-          = f.date_select :recordDay, use_month_numbers:true, class: :recordDay
-        %p.sleep__time
-          = f.number_field :sleep, class: :sleep, min: 0, max: 24, value: 0
-        %p.work__time
-          = f.number_field :work, class: :work, min: 0, max: 24, value: 0
-        %p.takeBreak__time
-          = f.number_field :takeBreak, class: :takeBreak, min: 0, max: 24, value: 0
-        %p.effort__time
-          = f.number_field :effort,  class: :effort, min: 0, max: 24, value: 0
-        %p.challenge__time
-          = f.number_field :challenge, class: :challenge,  min: 0, max: 24, value: 0
-        %p.chores
-          = f.number_field :chores, class: :chores,  min: 0, max: 24, value: 0
-        %p.comment
+        %p.record__note__input__record
+          != sprintf(f.date_select(:recordDay, with_css_classes: "recordDay", use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        %p.record__note__input__sleep
+          = f.label :sleep, "睡眠"
+          = f.number_field :sleep, class: :record__note__input__box, min: 0, max: 24, value: 0
+        %p.record__note__input__work
+          = f.label :work, "仕事"
+          = f.number_field :work, class: :record__note__input__box, min: 0, max: 24, value: 0
+        %p.record__note__input__takeBreak
+          = f.label :takeBreak, "休憩"
+          = f.number_field :takeBreak, class: :record__note__input__box, min: 0, max: 24, value: 0
+        %p.record__note__input__effort
+          = f.label :effort, "努力"
+          = f.number_field :effort,  class: :record__note__input__box, min: 0, max: 24, value: 0
+        %p.record__note__input__challenge
+          = f.label :challenge, "挑戦"
+          = f.number_field :challenge, class: :record__note__input__box,  min: 0, max: 24, value: 0
+        %p.record__note__input__chores
+          = f.label :chores, "雑務"
+          = f.number_field :chores, class:  :record__note__input__box,  min: 0, max: 24, value: 0
+        %p.record__note__input__comment
+          = f.label :comment, "今日の一言"
           = f.text_field :comment, class: :comment
-        %a.submit
+        %a.record__note__input__submit
           = f.submit '記録する', class: :form＿＿btn
     .graff
