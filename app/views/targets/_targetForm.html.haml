@@ -1,0 +1,18 @@
+.wrapper3
+  .main
+    .main__left
+      = form_with model: @target, local: true do |f|
+        .main__left__life-target
+          人生目標、幸せ
+        .main__left__life-target-input
+          = f.text_field :life_goal, value: @target.life_goal
+        .main__left__doream-target
+          夢、自己実現
+        .main__left__doream-target-input
+          = f.text_field :dream
+        .main__left__Achievement-target
+          達成目標
+        .main__left__Achievement-target__input
+          = f.text_field :achivement_taget
+        .main__left__edit
+          = f.submit "書き込む"

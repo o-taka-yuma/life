@@ -5,7 +5,7 @@
   position: absolute;
   &__note {
     width: 50%;
-    height: 50%;
+    height: 55%;
     padding:0 1em;
     background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
     background-size: auto 2.5em;
@@ -15,7 +15,7 @@
     border-right: 1px solid #ccc;
     display: flex;
     position: relative;
-    left: 100px;
+    left: 300px;
     top: 100px;
     &__title {
       margin-top: 40px;

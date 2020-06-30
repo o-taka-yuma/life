@@ -14,9 +14,16 @@ class TargetsController < ApplicationController
   end
 
   def edit
+    @target = Target.where(user_id: current_user.id).first
+
   end
   
   def update
+    @target = Target.where(user_id: current_user.id).first
+    if @target.update(target_params)
+      redirect_to action_records_path
+    end
+    
   end
 
 
