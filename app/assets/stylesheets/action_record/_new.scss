@@ -1,3 +1,11 @@
+@mixin timebox {
+  height: 30px;
+  width: 45px;
+  text-align: center;
+}
+
+
+
 .record {
   height: calc(100% - 60px);
   width: 100%;
@@ -38,20 +46,24 @@
         margin-top: 40px;
         margin-left: 40px;
         &__left {
-          &__box {
-            height: 30px;
-            width: 45px;
-            text-align: center;
+          &__time {
+            .box {
+              @include timebox
+            }
           }
         }
         &__right {
-          &__box {
-            height: 30px;
-            width: 45px;
-            text-align: center;
+          margin-left: 140px;
+          &__time {
+            .box {
+              @include timebox
+            }
           }
         }
         
+      }
+      &__memo {
+        text-align: right;
       }
 
       &__comment {
@@ -59,11 +71,24 @@
         margin-left: 40px;
         .comment {
           height: 30px;
-          width: 300px;
+          width: 400px;
         }
       }
       &__submit {
         text-align: right;
+        .form＿＿btn {
+          border: 1px solid #ff7d93;
+          background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 4px, rgba(255,255,255,0.5) 4px), linear-gradient(lighten(#ff7d93, 10%), #ff7d93);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+          &:hover {
+            background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,255,255,0.3) 4px, rgba(255,255,255,0.3) 4px), linear-gradient(lighten(#ff7d93, 10%), #ff7d93);
+          }
+          &:active, &:focus {
+            background: #ff7d93;
+            box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5);
+          }
+          
+        }
       }
     }
   }
@@ -80,6 +105,7 @@
       width: calc(100% - 60px);
       padding: 40px 30px 20px 30px;
     }
+    
   }
 }
 

@@ -1,6 +1,6 @@
 class ActionRecord < ApplicationRecord
   validates :sleep, :work, :takeBreak, presence: true
-  validates :total, presence: true, numericality: { equal_to: 24 }
+  validates :total, presence: true
   validates :recordDay, uniqueness: { scope: :user_id}
   belongs_to :user
 
