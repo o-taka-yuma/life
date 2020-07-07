@@ -21,9 +21,9 @@
             = @target.dream
           .main__left__up__text__Achievement-target
             達成目標
-          .main__left__up__text__Achievement-target__input
+          .main__left__up__text__Achievement-target-input
           - if @target != nil
-            = @target.achivement_taget
+            = simple_format( @target.achivement_taget )
       .main__left__day-record
         .main__left__day-record__content
           - @record.each do |record| 

@@ -61,6 +61,10 @@
             width: 90px;
             @include ribon
           }
+          &__Achievement-target-input {
+            
+            overflow: scroll;
+          }
         }
         
       }
