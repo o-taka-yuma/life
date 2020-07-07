@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_05_28_063722) do
     t.text "dream"
     t.text "achivement_taget"
     t.bigint "user_id"
-    t.text "timestamps"
     t.index ["user_id"], name: "index_targets_on_user_id"
   end
 

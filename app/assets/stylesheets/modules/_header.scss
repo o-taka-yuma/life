@@ -7,7 +7,14 @@
   color: wheat;
   .header__record-btn {
     margin: 10px 0 10px 0px;
-    .header__record-btn__record {}
-    .header__record-btn__logout {}
+    &__record {
+      .logoutBtn {
+        text-decoration: none;
+      }
+      .recordBtn {
+        text-decoration: none;
+      }
+    }
+    
   }
 }

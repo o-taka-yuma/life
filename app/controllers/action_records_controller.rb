@@ -2,6 +2,7 @@ class ActionRecordsController < ApplicationController
     
   def index
     @record = ActionRecord.where(user_id: current_user.id)
+    @target = Target.where(user_id: current_user.id).first
     @sleepAverage = @record.average(:sleep)
     @workAverage = @record.average(:work)
     @effortAverage = @record.average(:effort)

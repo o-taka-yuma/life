@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :users
 
   resources :action_records, only: [:index, :show, :new, :create] 
-  resources :targets, only:[:new, :create]
+  resources :targets, only:[:new, :create, :edit, :update]
 end
