@@ -1,6 +1,6 @@
 @mixin ribon{
   position: relative;
-  padding: 0.5em;
+  padding: 0.3em;
   background: #a6d3c8;
   color: white;
 }
@@ -27,55 +27,48 @@
     width: 100%;
     background-image: url(back.jpg);
     display: flex;
-    
-    .main__left {
+    &__left {
       width: 50%;
       height: 100%;
-      .main__left__text {
-        height: 45%;
-      }
-      .main__left__edit {
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 30px;
-        float: right
+      &__up {
+        height: calc(50% - 25px);
+        width: calc(100% - 76px);
+        background-image: url(gakubuti.jpg);
+        background-size: 720px 320px;
+        padding: 25px 38px 0 38px;
+
+        &__edit {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 30px;
+          float: right
+        }
+        &__text {
+          height: 45%;
+          &__life-target {
+            width: 130px;
+            @include ribon
+          }
+          
+          &__doream-target {
+            margin-top: 25px;
+            width: 100px;
+            @include ribon
+          }
+          &__Achievement-target {
+            margin-top: 25px;
+            width: 90px;
+            @include ribon
+          }
+        }
         
       }
-      .main__left__life-target {
-        width: 130px;
-        @include ribon
-      }
-      .main__left__life-target::before {
-        @include ribon_before
-      }
-      .main__left__life-target-input {
-        @include text
-      }
-      .main__left__doream-target {
-        margin-top: 25px;
-        width: 100px;
-        @include ribon
-      }
-      .main__left__doream-target::before {
-        @include ribon_before
-      }
-      .main__left__doream-target-input {
-        @include text
-      }
-      .main__left__Achievement-target {
-        margin-top: 25px;
-        width: 90px;
-        @include ribon
-      }
-      .main__left__Achievement-target::before {
-        @include ribon_before
-      }
-      .main__left__Achievement-target__input {
-        @include text
-      }
+      
+      
+      
       .main__left__day-record {
-        height: 50%;
+        height: calc(50% - 20px);
         width: 100%;
         background-image: url(memo.png);
         background-size: cover;

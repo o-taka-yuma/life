@@ -1,4 +1,5 @@
 .wrapper3
+  = render 'modules/header'
   .main
     .main__left
       = form_with model: @target, local: true do |f|
@@ -13,6 +14,6 @@
         .main__left__Achievement-target
           達成目標
         .main__left__Achievement-target__input
-          = f.text_field :achivement_taget
+          = f.text_area  :achivement_taget
         .main__left__edit
           = f.submit "書き込む"

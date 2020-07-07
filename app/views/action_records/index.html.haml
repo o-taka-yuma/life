@@ -2,26 +2,28 @@
   = render 'modules/header'
   .main
     .main__left
-      .main__left__edit
-        = link_to "編集", new_target_path, class: "main__left__edit"
-      - if @target != nil
-        = link_to "edit", "/targets/#{@target.id}/edit", class: "main__left__edit"
-      .main__left__text
-        .main__left__life-target
-          人生目標、生き方
-        .main__left__life-target-input
+      .main__left__up
+        .main__left__up__btn
+        - if @target == nil
+          = link_to "編集", new_target_path, class: "main__left__up__edit"
         - if @target != nil
-          = @target.life_goal
-        .main__left__doream-target
-          夢、自己実現
-        .main__left__doream-target-input
-        - if @target != nil
-          = @target.dream
-        .main__left__Achievement-target
-          達成目標
-        .main__left__Achievement-target__input
-        - if @target != nil
-          = @target.achivement_taget
+          = link_to "edit", "/targets/#{@target.id}/edit", class: "main__left__up__edit"
+        .main__left__up__text
+          .main__left__up__text__life-target
+            人生目標、生き方
+          .main__left__up__text__life-target-input
+          - if @target != nil
+            = @target.life_goal
+          .main__left__up__text__doream-target
+            夢、自己実現
+          .main__left__up__text__doream-target-input
+          - if @target != nil
+            = @target.dream
+          .main__left__up__text__Achievement-target
+            達成目標
+          .main__left__up__text__Achievement-target__input
+          - if @target != nil
+            = @target.achivement_taget
       .main__left__day-record
         .main__left__day-record__content
           - @record.each do |record| 
