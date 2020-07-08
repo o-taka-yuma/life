@@ -1,20 +1,11 @@
-.loginBox
-  .loginBox__text
-    ログイン
-  .loginBox__input
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .loginBox__input__summary
-        .loginBox__input__summary__label
-          = f.label :email
-        .loginBox__input__summary__fild
-          = f.email_field :email, autofocus: true
-        .loginBox__input__summary__password
-          .loginBox__input__summary__password__label
-            = f.label :password
-            %i (英数字8文字以上)
-          .loginBox__input__summary__password__fild
-            = f.password_field :password, autocomplete: "off"
-        .loginBox__input__summary__btn
-          = f.submit "Log in", class: 'btn'
-
-  = render "devise/shared/links"
+.login
+  .signBox
+    .signBox__text
+      ログイン
+    .signBox__input
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .signBox__input__summary
+          = f.email_field :email, autofocus: true, class: :box, placeholder: "メールアドレス"
+          = f.password_field :password, autocomplete: "off", class: :box, placeholder: "パスワード(英数字8文字)"
+          = f.submit "Log in", class: 'loginbtn'
+    = render "devise/shared/links"
