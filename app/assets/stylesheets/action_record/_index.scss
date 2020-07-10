@@ -62,7 +62,7 @@
             @include ribon
           }
           &__Achievement-target-input {
-            
+            height: 50px;
             overflow: scroll;
           }
         }
@@ -79,6 +79,7 @@
         margin: 0 auto;
         position: relative;
         .main__left__day-record__content {
+          
           position: absolute;
           left: 20px;
           top: 60px;
