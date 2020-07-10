@@ -1,0 +1,59 @@
+.login {
+  height: 100vh;
+  width: 100%;
+  background-image: url(back.jpg);
+  position: relative;
+  .signBox {
+    height: 50%;
+    width: 30%;
+    background-color: white;
+    border: solid black;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%, -50%);
+    &__text {
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    &__input {
+      &__summary {
+        .box {
+          display: block;
+          margin: auto auto;
+          width: 100%;
+          margin-bottom: 2em;
+          padding: .5em 0;
+          border: none;
+          border-bottom: 1px solid #eaeaea;
+          padding-bottom: 1.25em;
+          color: #757575;
+          &:focus {
+            outline: none;
+          }
+        }
+        .loginbtn {
+          display: inline-block;
+          background: #1fb5bf;
+          border: 1px solid darken(#1fb5bf, 5%);
+          padding: .5em 2em;
+          color: white;
+          margin-right: .5em;
+        }
+      }
+    }
+    &__link {
+      margin-top: 30px;
+      font-size: larger;
+      .btn {
+        color: #1fb5bf;
+        text-decoration: none;
+      }
+    }
+  }
+  
+}
