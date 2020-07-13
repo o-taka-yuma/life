@@ -15,11 +15,15 @@ https://life-9522.herokuapp.com/
 - 新規登録した後、1日ごとに記録ボタンで記録すると円グラフと％で平均行動が表示される。自身の行動を記録して客観視する事で自己を顧みる。継続するのが苦手な人が日々どれぐらいの割合で何をしているかを確認できる。
 
 ### 扱い方
-- 記録するボタンを押します
-https://i.gyazo.com/0c8d2edec764dc072404e8b682f3cbcb.jpg
+- 記録するボタンを押します.
+
+![life画像](https://user-images.githubusercontent.com/64815738/87266525-77467700-c500-11ea-9d45-8e911c8b93fe.jpg)
+
 
 - 時間を入力、コメントを書き込んで記録します。
-https://i.gyazo.com/5ec027a69f338cca423141b56384973c.mp4
+
+![5ec027a69f338cca423141b56384973c](https://user-images.githubusercontent.com/64815738/87266722-ea4fed80-c500-11ea-94ce-fab992058cab.gif)
+
 
 - その後記録が画面に表示されます。右図と％は全ての記録の平均値が出ています。
 
