@@ -41,6 +41,19 @@
           height: 30px;
         }
       }
+      .field_with_errors {
+        text-align: right;
+        .year {
+          height: 30px;
+        }
+        .month {
+          height: 30px;
+        }
+        .day {
+          height: 30px;
+        }
+      }
+      
       &__content {
         display: flex;
         margin-top: 40px;
